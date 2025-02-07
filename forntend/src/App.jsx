@@ -4,6 +4,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import Register from "./pages/Register";
 
 function App() {
   const Logout = () => {
@@ -13,7 +14,7 @@ function App() {
 
   const RegisterAndLogout = () => {
     localStorage.clear();
-    return <Navigate to="/register" />;
+    return <Register />;
   };
 
   return (

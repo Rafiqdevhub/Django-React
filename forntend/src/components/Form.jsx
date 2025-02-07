@@ -18,7 +18,7 @@ const Form = ({ route, method }) => {
     setLoading(true);
 
     try {
-      const response = await api.post("/token/", {
+      const response = await api.post(route, {
         username,
         password,
       });
