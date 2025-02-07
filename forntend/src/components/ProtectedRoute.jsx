@@ -25,7 +25,7 @@ const ProtectedRoute = ({ children }) => {
         setIsAuthorized(false);
       }
     } catch (error) {
-      console.log(error);
+      alert(error);
       setIsAuthorized(false);
     }
   };
