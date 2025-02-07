@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import LoadIndicator from "./LoadIndicator";
+import "../styles/form.css";
 
 const Form = ({ route, method }) => {
   const [username, setUsername] = useState("");
@@ -39,19 +40,21 @@ const Form = ({ route, method }) => {
     <form onSubmit={handleSubmit}>
       <h1>{name}</h1>
       <input
+        className="form-input"
         value={username}
         type="text"
         placeholder="username"
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
+        className="form-input"
         value={password}
         type="password"
         placeholder="username"
         onChange={(e) => setPassword(e.target.value)}
       />
       {loading && <LoadIndicator />}
-      <button type="submit" disabled={loading}>
+      <button type="submit" className="form-button">
         Submit
       </button>
     </form>
