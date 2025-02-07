@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import "./App.css";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
