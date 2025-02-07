@@ -18,7 +18,7 @@ const Form = ({ route, method }) => {
     setLoading(true);
 
     try {
-      const response = await api.post("/api/token/", {
+      const response = await api.post("/token/", {
         username,
         password,
       });
@@ -50,7 +50,7 @@ const Form = ({ route, method }) => {
         className="form-input"
         value={password}
         type="password"
-        placeholder="username"
+        placeholder="password"
         onChange={(e) => setPassword(e.target.value)}
       />
       {loading && <LoadIndicator />}
