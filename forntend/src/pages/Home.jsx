@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/home.css";
 import api from "../api";
 import Note from "../components/Note";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [notes, setNotes] = useState([]);
@@ -13,10 +14,8 @@ const Home = () => {
       const res = await api.get("/api/notes/");
       const data = res.data;
       setNotes(data);
-      console.log(data);
     } catch (err) {
       alert(err);
-      console.error("Error fetching notes:", err);
     }
   };
 
@@ -31,7 +30,6 @@ const Home = () => {
       }
     } catch (err) {
       alert(err);
-      console.error("Error deleting note:", err);
     }
   };
 
@@ -52,7 +50,6 @@ const Home = () => {
       }
     } catch (err) {
       alert(err);
-      console.error("Error creating note:", err);
     }
   };
   useEffect(() => {
@@ -90,6 +87,9 @@ const Home = () => {
         ></textarea>
         <br />
         <input type="submit" value="Submit"></input>
+        <button>
+          <Link to="/login">Login</Link>
+        </button>
       </form>
     </div>
   );
